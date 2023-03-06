@@ -1,0 +1,55 @@
+{% extends "base.html" %}
+{% load static %}
+
+
+{% block content %}
+
+<link rel="stylesheet" type="text/css" href=" {% static 'style.css' %}">
+<link rel="stylesheet" type="text/css" href=" {% static 'style_home.css' %}">
+
+
+<div class="container_media">
+    <img src={% static "media/plane.jpg" %}>
+
+{% if not request.user.is_authenticated %}
+
+    <div class="texto">
+       
+        <div style="margin-top: 30px;">
+            <p>Faça Login</p>
+            <form method="POST">{% csrf_token %}
+                {% if error %}
+                <p style="color: red;">{{error}}</p>
+                {% endif %}
+                <div>
+                    <input type='text' name="username" 
+                    placeholder="usuário">
+                </div>
+                <div>
+                    <input type='password' name="password"
+                    placeholder="senha">
+                </div>
+                <button type="submit">Login</button>
+            </form>
+           
+        </div>
+    </div>
+
+{% else %}
+
+            <div class="texto">
+                <p style="color: white; 
+                font-size: 120%;
+                font-family: asdf, arial, "Times new roman";
+                text-shadow: 1px 1px 1px #111111;">Vá ao <a href='dashboard'> Dashboard</a></p>
+            <br>
+            <p> você gostaria de <a a href="/logout">sair da sessão?</p></div>
+    </div>
+{% endif%}
+
+{% endblock content %}
+
+
+
+
+
