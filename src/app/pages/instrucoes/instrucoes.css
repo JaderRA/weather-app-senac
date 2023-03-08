@@ -1,6 +1,9 @@
 body {
   background-image: url("../../../assets/images/backgrond-leaf.png");
+  background-repeat: no-repeat;
+  background-position: center center fixed;
   background-size: cover;
+  height: 100vh;
   background-color: #394a1e;
 }
 
@@ -41,6 +44,22 @@ body {
   background-color: #e6e6e6;
   border: #fff;
   padding: 0.313rem 0.625rem;
+
+  color: #1a1a1a;
+}
+
+.instrucoes-button-container {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.instrucoes-button {
+  border-radius: 0.75rem;
+  background-color: #e6e6e6;
+  border: #fff;
+  padding: 0.315rem 0.63rem;
 
   color: #1a1a1a;
 }
