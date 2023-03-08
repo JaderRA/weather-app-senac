@@ -10,12 +10,18 @@ function salvarCidade() {
       cidades[idBotao - 1] = cidade;
       console.log(cidades);
       localStorage.setItem("cidades", JSON.stringify(cidades));
+      alert(
+        "Cidade salva com sucesso! Pressione o botão voltar para retornar à página inicial"
+      );
     } else {
       cidades = JSON.parse(localStorage.cidades);
 
       cidades[idBotao - 1] = document.getElementById("cidadeInput").value;
       console.log(cidades);
       localStorage.setItem("cidades", JSON.stringify(cidades));
+      alert(
+        "Cidade salva com sucesso! Pressione o botão voltar para retornar à página inicial"
+      );
     }
   } else {
     alert("Por favor, insira um nome válido");
