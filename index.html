@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WeatherApp</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/695d04a169.js" crossorigin="anonymous"></script>
+  </head>
+</head>
+<body>
+    
+     <div class="container">
+        <div class="logar">
+            <div class="">
+
+                <div class="name-app">
+                    WeatherApp
+                </div>
+                <div class="notificacao">
+                    Consulte os dados das estações meteorológicas
+                </div>
+                <div id="listaLavouras" class="button"></div>
+                <div class="button">
+                    <button type="button" class="btn btn-info"><label>Como utilizar</label></button>
+                    
+                </div>
+
+                <div class="button">
+                    <a href="cadastrar_lavoura.html" type="button" class="btn btn-info"><label>Cadastrar Lavoura</label></a>
+                    
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    
+
+<script>
+    // Ela guarda a latitude e longitude da lavoura selecionada no localStorage para serem usados na chamada da API
+    function visualizarCondMetereologica(lat, lon) {
+        
+        localStorage.latitude = lat
+        localStorage.longitude = lon
+    }
+
+    //agenda uma função para ser chamada quando a página carregar
+    window.addEventListener("load", function(event) {
+
+        //limpa as informações de latitude e longitude usadas na chamada de api. 
+        localStorage.removeItem("latitude")
+        localStorage.removeItem("longitude")
+
+        //Pega todas as lavouras guardadas no localStorage 
+        var lavouras = JSON.parse(localStorage.getItem("lavouras"))
+
+        var div = document.getElementById("listaLavouras")
+
+        var ancoras = [] 
+
+        //Cria uma ancora pra cada lavoura
+        lavouras.forEach(lavoura => {
+
+            var ancora = `<a href="cond_metereologica.html" class="btn btn-primary" onclick="visualizarCondMetereologica(${lavoura.latitude}, ${lavoura.longitude})"><span>${lavoura.nome}</span></a>`
+            
+            ancoras.push(ancora)
+
+        });
+
+        //Adciona todas as ancoras na div
+        div.innerHTML = ancoras.join("<br><br>")
+
+    })
+
+</script>
+</body>
+</html>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>

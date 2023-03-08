@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Confições Metereológicas</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+  </head>
+</head>
+<body>
+    
+     <div class="container">
+        <div class="logar">
+            <div class="conteudo">
+
+                <div class="name-app">
+                    Condições Metereológicas
+                </div>
+                <div class="info">
+                    <span><strong>Céu:</strong></span>
+                    <span id="ceu">n/a</span>
+                </div>
+                <div class="info">
+                    <span><strong>Visibilidade:</strong></span>
+                    <span id="visibilidade">n/a</span>
+                </div>
+                <div class="info">
+                    <span><strong>Teto:</strong></span>
+                    <span id="teto">n/a</span>
+                </div>
+                <div class="info">
+                    <span><strong>Condições do tempo:</strong></span>
+                    <span id="tempo">n/a</span>
+                </div>
+                <div class="info">
+                    <span><strong>Vento:</strong></span>
+                    <span id="vento">n/a</span>
+                </div>
+                <div class="button">
+                    <button type="button" class="btn btn-primary"><label>Satélite</label></button>
+                </div>
+                <div class="button">
+                    <a href="index.html" type="button" class="btn btn-info"><label>Voltar</label></a>
+                </div>
+
+            </div>
+
+            
+        </div>
+    </div>
+
+    
+
+<script>
+    //Agenda uma função pra ser execultada quando a página carregar
+     window.addEventListener("load", function(event) {
+        
+        //fazendo a chamado com a API
+        fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${localStorage.latitude}&lon=${localStorage.longitude}&appid=97e31ee7f1b993ef9ba312a26528bad4`)
+        .then((response) => response.json())
+        .then((data) => {
+
+            //Pega os dados da API e seta na tele de condições metereológicas
+            var ceu = document.getElementById("ceu");
+            var visibilidade = document.getElementById("visibilidade");
+            //var teto = document.getElementById("teto");
+            var tempo = document.getElementById("tempo");
+            var vento = document.getElementById("vento");
+
+            ceu.innerHTML = data.weather[0].description
+            visibilidade.innerHTML = `Maior ou igual a ${data.visibility}Km`
+            tempo.innerHTML = data.weather[0].main
+            vento.innerHTML = `${data.wind.deg}° com ${data.wind.speed}Km/h`
+        });
+
+    });
+
+</script>
+</body>
+</html>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
