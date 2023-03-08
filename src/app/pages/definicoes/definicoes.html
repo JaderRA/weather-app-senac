@@ -19,7 +19,11 @@
           <h3>Insira a cidade da Lavoura</h3>
           <div class="definicoes-form-container">
             <form action="" class="definicoes-form">
-              <input type="text" / class="definicoes-search-field" >
+              <input
+                id="cidadeInput"
+                type="text"
+                class="definicoes-search-field"
+              />
               <button type="submit" class="definicoes-form-button">
                 <img src="../../../assets/icons/lupa.svg" />
               </button>
@@ -27,7 +31,9 @@
           </div>
 
           <div class="definicoes-buttons-container">
-            <button class="definicoes-button">Salvar</button>
+            <button class="definicoes-button" onclick="salvarCidade(1)">
+              Salvar
+            </button>
             <button
               type="submit"
               class="definicoes-button"
