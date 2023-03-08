@@ -1,5 +1,5 @@
 function salvarCidade() {
-  var idBotao = +localStorage.idBotao;
+  var idBotao = parseInt(JSON.parse(localStorage.idBotao));
   var cidades = [];
 
   cidade = document.getElementById("cidadeInput").value;
@@ -8,11 +8,13 @@ function salvarCidade() {
   if (validacao && validacao.length >= 2) {
     if (!localStorage.cidades) {
       cidades[idBotao - 1] = cidade;
+      console.log(cidades);
       localStorage.setItem("cidades", JSON.stringify(cidades));
     } else {
       cidades = JSON.parse(localStorage.cidades);
 
       cidades[idBotao - 1] = document.getElementById("cidadeInput").value;
+      console.log(cidades);
       localStorage.setItem("cidades", JSON.stringify(cidades));
     }
   } else {
