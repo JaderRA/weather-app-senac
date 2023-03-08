@@ -1,4 +1,5 @@
 function salvarCidade() {
+  localStorage.setItem("idBotao", "2");
   var idBotao = +localStorage.idBotao;
   var cidades = [];
 
@@ -11,4 +12,8 @@ function salvarCidade() {
     cidades[idBotao - 1] = document.getElementById("cidadeInput").value;
     localStorage.setItem("cidades", JSON.stringify(cidades));
   }
+}
+
+function apagarVoltar() {
+  localStorage.removeItem("idBotao");
 }
