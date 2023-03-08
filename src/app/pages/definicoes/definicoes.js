@@ -1,5 +1,5 @@
-function salvarCidade(idBotao) {
-  idBotao = +idBotao;
+function salvarCidade() {
+  var idBotao = +localStorage.idBotao;
   var cidades = [];
 
   if (!localStorage.cidades) {
