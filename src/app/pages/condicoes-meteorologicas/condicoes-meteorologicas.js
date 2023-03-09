@@ -32,13 +32,17 @@ async function imprimeResultados(idBotao, cidades) {
 
   let divResposta = document.getElementById("apiResponse");
 
-  divResposta.innerHTML += `<p>Céu: ${listaClima.weather[0].description}</p>`;
-  divResposta.innerHTML += `<p>Temperatura: ${listaClima.main.temp}º C</p>`;
-  divResposta.innerHTML += `<p>Sensaçao Térmica: ${listaClima.main.feels_like}º C</p>`;
-  divResposta.innerHTML += `<p>Umidade: ${listaClima.main.humidity}%</p>`;
-  divResposta.innerHTML += `<p>Vento: ${Math.round(
-    listaClima.wind.speed * 3.6
-  )} km/h</p>`;
+  if (listaClima.cod == 200) {
+    divResposta.innerHTML += `<p>Céu: ${listaClima.weather[0].description}</p>`;
+    divResposta.innerHTML += `<p>Temperatura: ${listaClima.main.temp}º C</p>`;
+    divResposta.innerHTML += `<p>Sensaçao Térmica: ${listaClima.main.feels_like}º C</p>`;
+    divResposta.innerHTML += `<p>Umidade: ${listaClima.main.humidity}%</p>`;
+    divResposta.innerHTML += `<p>Vento: ${Math.round(
+      listaClima.wind.speed * 3.6
+    )} km/h</p>`;
+  } else {
+    divResposta.innerHTML += `<p> Cidade não encontrada <p>`;
+  }
 
   document.getElementById("loading").classList.add("ocultar");
 }

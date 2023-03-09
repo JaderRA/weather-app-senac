@@ -8,7 +8,6 @@ function salvarCidade() {
   if (validacao && validacao.length >= 2) {
     if (!localStorage.cidades) {
       cidades[idBotao - 1] = cidade;
-      console.log(cidades);
       localStorage.setItem("cidades", JSON.stringify(cidades));
       alert(
         "Cidade salva com sucesso! Pressione o botão voltar para retornar à página inicial"
