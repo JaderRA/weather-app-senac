@@ -3,9 +3,9 @@ window.addEventListener("load", function () {
 
   for (let i = 0; i < 4; i++) {
     if (cidades[i]) {
-      this.document.getElementById(`lavoura${i + 1}`).innerHTML = cidades[i];
+      this.document.getElementById(`Lavoura ${i + 1}`).innerHTML = cidades[i];
     } else {
-      this.document.getElementById(`lavoura${i + 1}`).innerHTML = `Lavoura ${
+      this.document.getElementById(`Lavoura ${i + 1}`).innerHTML = `Lavoura ${
         i + 1
       }`;
     }
@@ -14,4 +14,8 @@ window.addEventListener("load", function () {
 
 function salvarIdBotao(idBotao) {
   localStorage.setItem("idBotao", JSON.stringify(idBotao));
+}
+
+function salvarBotaoLavoura(idLavoura) {
+  localStorage.setItem("idLavoura", JSON.stringify(idLavoura));
 }
