@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+{% load static %}
+
+
+<html lang="pt_br">
+<link rel="stylesheet" type="text/css" href=" {% static 'condicoes.css' %}">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script src="{% static 'js/condicoes-meteorologicas.js' %}"></script>
+  <title>Condições Meteorológicas</title>
+</head>
+
+<body>
+  <div class="meteorologicas-container">
+    <header>
+      <h1 id="meteorologicas-titulo" class="meteorologicas-titulo"></h1>
+      <h3 id="meteorologicas-subtitulo" class="meteorologicas-subtitulo"></h3>
+    </header>
+    <article id="apiResponse" class="meteorologicas-body">
+      <div id="loading" class="lds-ring">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+    </article>
+    <footer class="meteorológicas-button-container">
+     
+      <button onclick="window.location.href='/'">
+        Voltar
+      </button>
+    </footer>
+  </div>
+</body>
+
+</html>

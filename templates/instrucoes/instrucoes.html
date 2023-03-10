@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+
+{% load static %}
+
+<html lang="pt-br">
+<link rel="stylesheet" type="text/css" href=" {% static 'instrucoes.css' %}">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Instruções</title>
+</head>
+
+<body>
+  <div class="instrucoes-container">
+    <header class="header-container">
+      <h1>Olá agricultor!</h1>
+      <h3>
+        Abaixo você encontra algumas dicas de como utilizar este aplicativo.
+        Peçamos que reporte-nos qualquer problema.
+      </h3>
+      <h3>Mãos à obra!</h3>
+    </header>
+    <article class="body-container">
+      <p>
+        Clique no botão
+        <span><button class="lavoura-button">Lavoura</button></span> para
+        visualizar as informações a repeito da lavoura de sua escolha.
+      </p>
+      <p>É possível ter até 3 lavouras salvas simultaneamente.</p>
+      <p>
+        Para alterar os sensores da lavoura, clique no botão de engrenagem
+        <span><object data="/static/assets/icons/configuracoes.svg" width="25" height="25"></object>
+        </span>
+        para alterar. Digite a nova cidade na caixa de busca e clique no botão
+        salvar. Em seguida clique no botão voltar para retornar à tela
+        inicial.
+      </p>
+
+      <div class="instrucoes-button-container">
+        <button type="submit" class="instrucoes-button" onclick="window.location.href='/'">
+          Voltar
+        </button>
+      </div>
+    </article>
+  </div>
+</body>
+
+</html>

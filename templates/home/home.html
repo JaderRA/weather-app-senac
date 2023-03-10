@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+
+{% load static %}
+
+<html lang="pt-br">
+<link rel="stylesheet" type="text/css" href=" {% static 'home.css' %}">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+
+  <script src="{% static 'js/home.js'%}"></script>
+  <title>Home</title>
+</head>
+
+<body>
+  <div class=" home-container">
+    <header>
+      <h1 class="home-header">Weather App</h1>
+    </header>
+
+    <article>
+      <div class="home-body-container">
+        <h3>Consulte os dados das estações meteorológicas</h3>
+
+        <div class="home-buttons-container">
+          <div class="home-singleButton-container">
+            <button id="Lavoura 1" type="submit" class="home-button"
+              onclick="salvarBotaoLavoura(this.id); window.location.href='/condicoes'">
+              Lavoura 1
+            </button>
+            <button id="1" type="submit" class="home-image-button"
+              onclick="salvarIdBotao(this.id); window.location.href='/definicoes'">
+              <img src="/static/assets/icons/configuracoes.svg" />
+            </button>
+          </div>
+          <div class="home-singleButton-container">
+            <button id="Lavoura 2" type="submit" class="home-button"
+              onclick="salvarBotaoLavoura(this.id); window.location.href='/condicoes'">
+              Lavoura 2
+            </button>
+            <button id="2" type="submit" class="home-image-button"
+              onclick="salvarIdBotao(this.id); window.location.href='/definicoes'">
+              <img src="/static/assets/icons/configuracoes.svg" />
+            </button>
+          </div>
+          <div class="home-singleButton-container">
+            <button id="Lavoura 3" type="submit" class="home-button"
+              onclick="salvarBotaoLavoura(this.id); window.location.href='/condicoes'">
+              Lavoura 3
+            </button>
+            <button id="3" type="submit" class="home-image-button"
+              onclick="salvarIdBotao(this.id); window.location.href='/definicoes'">
+              <img src="/static/assets/icons/configuracoes.svg" />
+            </button>
+          </div>
+
+          <button type="submit" id="instrucoesBotao" class="home-button"
+            onclick="window.location.href='/instrucoes'">
+            Como utilizar?
+          </button>
+        </div>
+      </div>
+    </article>
+  </div>
+</body>
+
+</html>
