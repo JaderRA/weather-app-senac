@@ -1,10 +1,9 @@
 body {
   background-image: url("/static/assets/images/backgrond-leaf.png");
-  background-repeat: no-repeat;
-  background-position: center center fixed;
   background-size: cover;
   height: 100vh;
   background-color: #394a1e;
+  overflow: scroll;
 }
 
 .instrucoes-container {
@@ -65,7 +64,11 @@ body {
 }
 
 @media (max-width: 768px) {
-  body::-webkit-scrollbar {
+  .instrucoes-container {
+    scrollbar-width: none;
+  }
+
+  .instrucoes-container::-webkit-scrollbar {
     display: none;
   }
 }
