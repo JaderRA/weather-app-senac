@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="static/feedback.css" />
+
+    <title>Feedback</title>
+  </head>
+  <header>
+    <div class="social-media-container">
+      <h2>Siga-nos em nossas redes sociais:</h2>
+      <div class="social-media-icons-container">
+        <a href="https://www.facebook.com/" target="_blank"
+          ><img
+            src="/static/assets/icons/social-media/facebook.png"
+            alt="Ícone do facebook"
+        /></a>
+        <a href="https://www.instagram.com/" target="_blank"
+          ><img
+            src="/static/assets/icons/social-media/instagram.png"
+            alt="Ícone do instagram"
+        /></a>
+        <a href="https://www.linkedin.com/hp/" target="_blank"
+          ><img
+            src="/static/assets/icons/social-media/linkedin.png"
+            alt="Ícone do linkedin"
+        /></a>
+        <a href="https://twitter.com/" target="_blank"
+          ><img
+            src="/static/assets/icons/social-media/twitter.png"
+            alt="Ícone do twitter"
+        /></a>
+      </div>
+    </div>
+  </header>
+  <body>
+    <div class="feedback-container">
+      <h1 class="title">Deixe seu feedback</h1>
+      <div class="star-container">
+        <span class="star" data-rating="1">&#9733;</span>
+        <span class="star" data-rating="2">&#9733;</span>
+        <span class="star" data-rating="3">&#9733;</span>
+        <span class="star" data-rating="4">&#9733;</span>
+        <span class="star" data-rating="5">&#9733;</span>
+      </div>
+      <textarea id="feedback-textarea" class="feedback-textarea"></textarea>
+      <button id="submit">Enviar</button>
+      <p id="result" class="hide"></p>
+      <button type="submit" onclick="window.location.href='/'">Voltar</button>
+    </div>
+
+    <script src="static/js/feedback.js"></script>
+  </body>
+</html>

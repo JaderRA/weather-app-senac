@@ -14,5 +14,8 @@ def condicoes(request):
 def instrucoes(request):
     return render(request, 'instrucoes/instrucoes.html')
 
+def feedback(request):
+    return render(request, 'feedback/feedback.html')
+
 #def imagens(request):
     #return render(request, 'imagens.html')
