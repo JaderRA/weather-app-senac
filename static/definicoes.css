@@ -1,0 +1,87 @@
+body {
+  background-image: url('/static/assets/images/dark-cloud.gif');
+  background-repeat: no-repeat;
+  background-position: center center fixed;
+  background-size: cover;
+  height: 100vh;
+  background-color: #21221ee3;
+}
+
+.definicoes-container {
+  color: #d9bb84;
+  font-family: Roboto, sans-serif;
+  padding: 0.625rem;
+}
+
+.definicoes-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 2rem;
+}
+
+.definicoes-body-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1.25rem;
+
+  font-size: 1.3rem;
+}
+
+.definicoes-form-container {
+  width: 300px;
+  height: 60px;
+}
+
+.definicoes-search-field {
+  width: 100%;
+  padding: 10px 35px 10px 15px;
+
+  border: solid;
+  border-color: #d9bb84;
+  border-radius: 100px;
+  outline: none;
+
+  background-color: #d9bb84;
+  color: #232426;
+}
+
+.definicoes-form-button {
+  background: transparent;
+  border: none;
+  outline: none;
+  margin-left: -33px;
+}
+
+.definicoes-form-button img {
+  width: 20px;
+  height: 20px;
+  object-fit: cover;
+}
+
+.definicoes-buttons-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+
+  margin-top: 80px;
+}
+
+.definicoes-form {
+  display: flex;
+  flex-direction: row;
+}
+
+.definicoes-buttons-container button {
+  border-radius: 0.75rem;
+  background-color: #d9bb84;
+  border: #d9bb84;
+  width: 150px;
+  padding: 0.313rem 0.625rem;
+
+  color: #232426;
+  font-size: 1.438rem;
+}
