@@ -28,7 +28,6 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 1.25rem;
 
   font-size: 1.3rem;
 }
@@ -83,7 +82,7 @@ body {
 }
 
 #instrucoesBotao {
-  margin-top: 50px;
+  margin-top: 30px;
 }
 
 .disabled-button {
@@ -93,4 +92,11 @@ body {
   opacity: 0.6;
   pointer-events: none;
   border: 1px solid #ccc;
+}
+
+.footer-buttons-container {
+  display: flex;
+  flex-direction: column;
+  gap: 0.625rem;
+  margin-top: 0;
 }
